@@ -66,3 +66,8 @@ class Point:
         if not isinstance(value, tuple):
             raise TypeError(f"Expected {tuple}, got {type(value)}")
         self.__color = value
+
+    def __eq__(self, other) -> bool:
+        if not isinstance(other, Point):
+            raise TypeError(f"Expected {Point}, got {type(other)}")
+        return ((self.x == other.x) & (self.y == self.x))
